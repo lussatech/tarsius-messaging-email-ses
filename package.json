@@ -1,0 +1,48 @@
+{
+  "name": "tarsius-messaging-email-ses",
+  "version": "1.0.0",
+  "private": true,
+  "description": "tarsius plugin for send email via AWS ses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^1.10.0",
+    "nodemailer-html-to-text": "^1.0.2",
+    "nodemailer-ses-transport": "^1.3.0"
+  },
+  "tarsius": {
+    "type": "messaging.email",
+    "name": "AWS SES mail gateway",
+    "configs": [
+      {
+        "name": "accessKeyId",
+        "title": "AWS Acces Key",
+        "type": "string"
+      },
+      {
+        "name": "secretAccessKey",
+        "title": "AWS secret",
+        "type": "password"
+      },
+      {
+        "name": "sessionToken",
+        "title": "session token",
+        "type": "password"
+      },
+      {
+        "name": "region",
+        "title": "region",
+        "type": "string"
+      },
+      {
+        "name": "rateLimit",
+        "title": "amount of messages that can be sent in 1 second",
+        "type": "number"
+      }
+    ]
+  }
+}
